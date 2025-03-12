@@ -849,24 +849,83 @@
         </div>
     </section>
 
-    <section class="cta" id="support" style="padding: 7rem 0; text-align: center; position: relative; z-index: 1;">
-    <div class="container" style="width: 92%; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
-        <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 800; color: #FFFFFF; display: block;">Ready to Add Excitement to Your Server?</h2>
-        
-        <p style="color: #a2a5b9; max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem; display: block;">Give your members a full economy experience with jobs, banking, and thrilling games</p>
-        
+   <!-- CTA section with aggressive overlay-busting properties -->
+<style>
+/* Reset for the CTA section to override any problematic styles */
+.fixed-cta-section {
+    position: relative;
+    z-index: 9999 !important; /* Very high z-index to break through any layers */
+    padding: 7rem 0;
+    text-align: center;
+    pointer-events: auto !important;
+}
+
+.fixed-cta-section::before,
+.fixed-cta-section::after {
+    content: none !important; /* Disable any pseudo-elements that might be causing issues */
+}
+
+.fixed-cta-container {
+    position: relative;
+    z-index: 10000 !important;
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    pointer-events: auto !important;
+}
+
+.fixed-cta-heading {
+    position: relative;
+    z-index: 10001 !important;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    display: block;
+    pointer-events: auto !important;
+}
+
+.fixed-cta-paragraph {
+    position: relative;
+    z-index: 10002 !important;
+    color: #a2a5b9;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+    display: block;
+    pointer-events: auto !important;
+}
+
+.fixed-cta-button {
+    position: relative;
+    z-index: 10003 !important;
+    background: linear-gradient(135deg, #0070ba, #009cde);
+    color: white !important;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer !important;
+    transition: all 0.3s;
+    text-decoration: none !important;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+    pointer-events: auto !important;
+}
+
+.fixed-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 112, 186, 0.5);
+}
+</style>
+
+<section class="fixed-cta-section" id="support">
+    <div class="fixed-cta-container">
+        <h2 class="fixed-cta-heading">Ready to Add Excitement to Your Server?</h2>
+        <p class="fixed-cta-paragraph">Give your members a full economy experience with jobs, banking, and thrilling games</p>
         <a href="https://discord.com/oauth2/authorize?client_id=1348480048692465687&permissions=8&scope=bot%20applications.commands" 
-           style="background: linear-gradient(135deg, #0070ba, #009cde); 
-                  color: white; 
-                  border: none; 
-                  padding: 0.8rem 1.8rem; 
-                  border-radius: 50px; 
-                  font-weight: 600; 
-                  cursor: pointer; 
-                  transition: all 0.3s; 
-                  text-decoration: none; 
-                  display: inline-block; 
-                  box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);">
+           class="fixed-cta-button" 
+           onclick="window.open(this.href, '_blank'); return false;">
             Add to Discord <i class="fas fa-arrow-right"></i>
         </a>
     </div>
