@@ -849,7 +849,7 @@
         </div>
     </section>
 
-   <!-- CTA section with aggressive overlay-busting properties -->
+ <!-- CTA section with animated button -->
 <style>
 /* Reset for the CTA section to override any problematic styles */
 .fixed-cta-section {
@@ -906,16 +906,49 @@
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer !important;
-    transition: all 0.3s;
     text-decoration: none !important;
     display: inline-block;
     box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
     pointer-events: auto !important;
+    
+    /* Add pulse animation */
+    animation: pulse 2s infinite;
 }
 
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 112, 186, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+    }
+}
+
+/* Enhanced hover effect */
 .fixed-cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 112, 186, 0.5);
+    animation: none; /* Stop the pulse animation on hover */
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #009cde, #0070ba); /* Reverse the gradient */
+    box-shadow: 0 10px 25px rgba(0, 112, 186, 0.6);
+    transition: all 0.3s ease-out;
+}
+
+/* Add arrow animation on hover */
+.fixed-cta-button i {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.fixed-cta-button:hover i {
+    transform: translateX(5px);
 }
 </style>
 
@@ -930,7 +963,6 @@
         </a>
     </div>
 </section>
-
     <footer>
         <div class="container">
             <div class="footer-links">
